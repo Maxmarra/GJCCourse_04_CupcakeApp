@@ -94,6 +94,6 @@ fun SelectOptionScreen(
 fun SelectOptionPreview(){
     SelectOptionScreen(
         subtotal = "299.99",
-        options = listOf("Option 1", "Option 2", "Option 3", "Option 4")
+        options = listOf("Вариант 1", "Вариант 2", "Вариант 3", "Вариант 4")
     )
 }
