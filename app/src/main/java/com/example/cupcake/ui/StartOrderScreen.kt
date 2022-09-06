@@ -80,8 +80,8 @@ fun SelectQuantityButton(
     }
 }
 
-@Preview
-@Composable
-fun StartOrderPreview(){
-    StartOrderScreen(quantityOptions = quantityOptions)
-}
+//@Preview
+//@Composable
+//fun StartOrderPreview(){
+//    StartOrderScreen(quantityOptions = quantityOptions)
+//}
