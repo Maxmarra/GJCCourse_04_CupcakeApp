@@ -24,12 +24,6 @@ import androidx.compose.ui.unit.dp
 import com.example.cupcake.R
 import com.example.cupcake.ui.components.FormattedPriceLabel
 
-/**
- * Composable that displays the list of items as [RadioButton] options,
- * [onSelectionChanged] lambda that notifies the parent composable when a new value is selected,
- * [onCancelButtonClicked] lambda that cancels the order when user clicks cancel and
- * [onNextButtonClicked] lambda that triggers the navigation to next screen
- */
 @Composable
 fun SelectOptionScreen(
     subtotal: String,
@@ -94,6 +88,6 @@ fun SelectOptionScreen(
 fun SelectOptionPreview(){
     SelectOptionScreen(
         subtotal = "299.99",
-        options = listOf("Option 1", "Option 2", "Option 3", "Option 4")
+        options = listOf("Вариант 1", "Вариант 2", "Вариант 3", "Вариант 4")
     )
 }
