@@ -25,8 +25,8 @@ import com.example.cupcake.ui.components.FormattedPriceLabel
 @Composable
 fun OrderSummaryScreen(
     orderUiState: OrderUiState,
-    // TODO: add onCancelButtonClicked
-    // TODO: add onSendButtonClicked
+    // TOD: add onCancelButtonClicked
+    // TOD: add onSendButtonClicked
     onCancelButtonClicked: () -> Unit,
     onSendButtonClicked: (String, String) -> Unit,
     modifier: Modifier = Modifier
