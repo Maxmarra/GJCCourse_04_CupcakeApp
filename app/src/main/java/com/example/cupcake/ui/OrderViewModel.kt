@@ -63,6 +63,7 @@ class OrderViewModel : ViewModel() {
         }
     }
 
+
     /**
      * Reset the order state
      */

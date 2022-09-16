@@ -22,10 +22,6 @@ import com.example.cupcake.R
 import com.example.cupcake.data.OrderUiState
 import com.example.cupcake.ui.components.FormattedPriceLabel
 
-/**
- * This composable expects [orderUiState] that represents the order state, [onCancelButtonClicked] lambda
- * that triggers canceling the order and passes the final order to [onSendButtonClicked] lambda
- */
 @Composable
 fun OrderSummaryScreen(
     orderUiState: OrderUiState,
@@ -69,6 +65,7 @@ fun OrderSummaryScreen(
             Divider(thickness = 1.dp)
         }
         Spacer(modifier = Modifier.height(8.dp))
+
         FormattedPriceLabel(
             subtotal = orderUiState.price,
             modifier = Modifier.align(Alignment.End)

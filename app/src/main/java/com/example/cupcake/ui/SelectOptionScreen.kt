@@ -24,12 +24,6 @@ import androidx.compose.ui.unit.dp
 import com.example.cupcake.R
 import com.example.cupcake.ui.components.FormattedPriceLabel
 
-/**
- * Composable that displays the list of items as [RadioButton] options,
- * [onSelectionChanged] lambda that notifies the parent composable when a new value is selected,
- * [onCancelButtonClicked] lambda that cancels the order when user clicks cancel and
- * [onNextButtonClicked] lambda that triggers the navigation to next screen
- */
 @Composable
 fun SelectOptionScreen(
     subtotal: String,
@@ -42,28 +36,30 @@ fun SelectOptionScreen(
     var selectedValue by rememberSaveable { mutableStateOf("") }
 
     Column (modifier = modifier.padding(16.dp)){
+
         options.forEach { item ->
             Row (
                 modifier = Modifier.selectable(
-                    selected = selectedValue == item,
                     onClick = {
                         selectedValue = item
                         onSelectionChanged(item)
-                    }
+                    },
+                    selected = selectedValue == item,
                 ),
                 verticalAlignment = Alignment.CenterVertically
             ){
                 RadioButton(
-                    selected = selectedValue == item,
                     onClick = {
                         selectedValue = item
                         onSelectionChanged(item)
-                    }
+                    },
+                    selected = selectedValue == item,
                 )
                 Text(item)
             }
         }
         Divider(thickness = 1.dp, modifier = modifier.padding(bottom = 16.dp))
+
         FormattedPriceLabel(
             subtotal = subtotal,
             modifier = Modifier
@@ -74,7 +70,8 @@ fun SelectOptionScreen(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(16.dp)
         ){
-            OutlinedButton(modifier = Modifier.weight(1f), onClick = { /* TODO: handle cancel button */ }) {
+            OutlinedButton(modifier = Modifier.weight(1f),
+                onClick = { /* TODO: handle cancel button */ }) {
                 Text(stringResource(R.string.cancel))
             }
             Button(

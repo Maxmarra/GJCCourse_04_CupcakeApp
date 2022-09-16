@@ -40,6 +40,7 @@ fun CupcakeAppBar(
     )
 }
 
+
 @Composable
 fun CupcakeApp(modifier: Modifier = Modifier, viewModel: OrderViewModel = viewModel()){
     // TODO: Create NavController

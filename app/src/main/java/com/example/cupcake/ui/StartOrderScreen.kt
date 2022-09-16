@@ -23,10 +23,6 @@ import androidx.compose.ui.unit.dp
 import com.example.cupcake.R
 import com.example.cupcake.data.DataSource.quantityOptions
 
-/**
- * Composable that allows the user to select the desired cupcake quantity and expects
- * [onNextButtonClicked] lambda that expects the selected quantity and triggers the navigation to next screen
- */
 @Composable
 fun StartOrderScreen(
     quantityOptions: List<Pair<Int, Int>>,
@@ -38,15 +34,21 @@ fun StartOrderScreen(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
+
         Spacer(modifier = Modifier.height(16.dp))
+
         Image(
             painter = painterResource(R.drawable.cupcake),
             contentDescription = null,
             modifier = Modifier.width(300.dp)
         )
+
         Spacer(modifier = Modifier.height(16.dp))
+
         Text(text = stringResource(R.string.order_cupcakes), style = MaterialTheme.typography.h4)
+
         Spacer(modifier = Modifier.height(8.dp))
+
         quantityOptions.forEach { item ->
             SelectQuantityButton(
                 labelResourceId = item.first,
@@ -56,10 +58,6 @@ fun StartOrderScreen(
     }
 }
 
-/**
- * Customizable button composable that displays the [labelResourceId]
- * and triggers [onClick] lambda when this composable is clicked
- */
 @Composable
 fun SelectQuantityButton(
     @StringRes labelResourceId: Int,
