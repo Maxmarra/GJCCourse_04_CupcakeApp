@@ -11,27 +11,17 @@ import java.text.SimpleDateFormat
 import java.util.Calendar
 import java.util.Locale
 
-/** Price for a single cupcake */
 private const val PRICE_PER_CUPCAKE = 2.00
 
-/** Additional cost for same day pickup of an order */
 private const val PRICE_FOR_SAME_DAY_PICKUP = 3.00
 
-/**
- * [OrderViewModel] holds information about a cupcake order in terms of quantity, flavor, and
- * pickup date. It also knows how to calculate the total price based on these order details.
- */
 class OrderViewModel : ViewModel() {
 
-    /**
-     * Cupcake state for this order
-     */
+
     private val _uiState = MutableStateFlow(OrderUiState(pickupOptions = pickupOptions()))
     val uiState: StateFlow<OrderUiState> = _uiState.asStateFlow()
 
-    /**
-     * Set the quantity [numberCupcakes] of cupcakes for this order's state and update the price
-     */
+
     fun setQuantity(numberCupcakes: Int) {
         _uiState.update { currentState ->
             currentState.copy(
@@ -41,19 +31,12 @@ class OrderViewModel : ViewModel() {
         }
     }
 
-    /**
-     * Set the [desiredFlavor] of cupcakes for this order's state.
-     * Only 1 flavor can be selected for the whole order.
-     */
     fun setFlavor(desiredFlavor: String) {
         _uiState.update { currentState ->
             currentState.copy(flavor = desiredFlavor)
         }
     }
 
-    /**
-     * Set the [pickupDate] for this order's state and update the price
-     */
     fun setDate(pickupDate: String) {
         _uiState.update { currentState ->
             currentState.copy(
@@ -63,16 +46,10 @@ class OrderViewModel : ViewModel() {
         }
     }
 
-    /**
-     * Reset the order state
-     */
     fun resetOrder() {
         _uiState.value = OrderUiState(pickupOptions = pickupOptions())
     }
 
-    /**
-     * Returns the calculated price based on the order details.
-     */
     private fun calculatePrice(
         quantity: Int = _uiState.value.quantity,
         pickupDate: String = _uiState.value.date
@@ -86,9 +63,6 @@ class OrderViewModel : ViewModel() {
         return formattedPrice
     }
 
-    /**
-     * Returns a list of date options starting with the current date and the following 3 dates.
-     */
     private fun pickupOptions(): List<String> {
         val dateOptions = mutableListOf<String>()
         val formatter = SimpleDateFormat("E MMM d", Locale.getDefault())
