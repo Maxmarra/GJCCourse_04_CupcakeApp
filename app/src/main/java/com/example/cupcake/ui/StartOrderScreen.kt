@@ -26,7 +26,6 @@ import com.example.cupcake.data.DataSource.quantityOptions
 @Composable
 fun StartOrderScreen(
     quantityOptions: List<Pair<Int, Int>>,
-    // TOD: add onNextButtonClicked
     onNextButtonClicked: (Int) -> Unit,
     modifier: Modifier = Modifier
 ){
@@ -54,7 +53,6 @@ fun StartOrderScreen(
             SelectQuantityButton(
                 labelResourceId = item.first,
                 onClick = {
-                // TOD: handle next button
                     onNextButtonClicked(item.second)
                 }
             )
@@ -62,10 +60,6 @@ fun StartOrderScreen(
     }
 }
 
-/**
- * Customizable button composable that displays the [labelResourceId]
- * and triggers [onClick] lambda when this composable is clicked
- */
 @Composable
 fun SelectQuantityButton(
     @StringRes labelResourceId: Int,

@@ -33,9 +33,7 @@ enum class CupcakeScreen() {
     Pickup,
     Summary
 }
-/**
- * Composable that displays the topBar and displays back button if back navigation is possible.
- */
+
 @Composable
 fun CupcakeAppBar(
     canNavigateBack: Boolean,
@@ -58,14 +56,11 @@ fun CupcakeAppBar(
     )
 }
 
-
-
 @Composable
 fun CupcakeApp(
     modifier: Modifier = Modifier,
     viewModel: OrderViewModel = viewModel()){
 
-    // TOD: Create NavController
     val navController = rememberNavController()
 
     // TODO: Get current back stack entry
@@ -79,21 +74,21 @@ fun CupcakeApp(
                 navigateUp = { /* TODO: implement back navigation */ }
             )
         }
-    ) { innerPadding ->
+    ) {
         val uiState by viewModel.uiState.collectAsState()
 
         // TOD: add NavHost
         NavHost(
             navController = navController,
             startDestination = CupcakeScreen.Start.name,
-            modifier = modifier.padding(innerPadding)
+
         ){
 
             composable(route = CupcakeScreen.Start.name) {
                 StartOrderScreen(
                     quantityOptions = quantityOptions,
-                    onNextButtonClicked = {
-                        viewModel.setQuantity(it)
+                    onNextButtonClicked = {quantity->
+                        viewModel.setQuantity(quantity)
                         navController.navigate(CupcakeScreen.Flavor.name)
                     }
 
