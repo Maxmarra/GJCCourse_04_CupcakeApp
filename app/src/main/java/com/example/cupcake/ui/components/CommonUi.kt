@@ -10,6 +10,7 @@ import com.example.cupcake.R
  * Composable that displays formatted [price] that will be formatted and displayed on screen
  */
 
+
 @Composable
 fun FormattedPriceLabel(
     subtotal: String,

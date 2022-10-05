@@ -28,7 +28,7 @@ import com.example.cupcake.ui.components.FormattedPriceLabel
 fun SelectOptionScreen(
     subtotal: String,
     options: List<String>,
-    onSelectionChanged: (String) -> Unit = {},
+    onSelectionChanged: (String) -> Unit,
     // TODO: add onCancelButtonClicked
     // TODO: add onNextButtonClicked
     modifier: Modifier = Modifier
@@ -91,6 +91,7 @@ fun SelectOptionScreen(
 fun SelectOptionPreview(){
     SelectOptionScreen(
         subtotal = "299.99",
-        options = listOf("Вариант 1", "Вариант 2", "Вариант 3", "Вариант 4")
+        options = listOf("Вариант 1", "Вариант 2", "Вариант 3", "Вариант 4"),
+        onSelectionChanged = {}
     )
 }

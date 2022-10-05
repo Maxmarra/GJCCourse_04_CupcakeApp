@@ -45,6 +45,8 @@ fun OrderSummaryScreen(
         orderUiState.quantity
     )
     val newOrder = stringResource(R.string.new_cupcake_order)
+
+
     //Create a list of order summary to display
     val items = listOf(
         // Summary line 1: display selected quantity
@@ -59,11 +61,15 @@ fun OrderSummaryScreen(
         modifier = modifier.padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(8.dp)
     ) {
+
         items.forEach { item ->
             Text(item.first.uppercase())
-            Text(text = item.second, fontWeight = FontWeight.Bold)
+            Text(text = item.second,
+                fontWeight = FontWeight.Bold)
             Divider(thickness = 1.dp)
         }
+
+
         Spacer(modifier = Modifier.height(8.dp))
 
         FormattedPriceLabel(

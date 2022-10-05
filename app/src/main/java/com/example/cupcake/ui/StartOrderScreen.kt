@@ -45,7 +45,8 @@ fun StartOrderScreen(
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        Text(text = stringResource(R.string.order_cupcakes), style = MaterialTheme.typography.h4)
+        Text(text = stringResource(R.string.order_cupcakes),
+            style = MaterialTheme.typography.h4)
 
         Spacer(modifier = Modifier.height(8.dp))
 

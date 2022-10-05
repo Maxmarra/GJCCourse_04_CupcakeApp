@@ -1,5 +1,6 @@
 package com.example.cupcake.data
 
+
 data class OrderUiState(
     /** Selected cupcake quantity (1, 6, 12) */
     val quantity: Int = 0,
