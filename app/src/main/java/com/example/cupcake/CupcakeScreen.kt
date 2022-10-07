@@ -55,8 +55,6 @@ fun CupcakeAppBar(
     )
 }
 
-
-
 @Composable
 fun CupcakeApp(
     modifier: Modifier = Modifier,
