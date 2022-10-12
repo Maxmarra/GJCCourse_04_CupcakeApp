@@ -83,7 +83,8 @@ fun CupcakeApp(
 
             composable(route = CupcakeScreen.Start.name) {
                 StartOrderScreen(
-                    quantityOptions = quantityOptions
+                    quantityOptions = quantityOptions,
+                    onNextButtonClicked = {}
                 )
             }
             composable(route = CupcakeScreen.Flavor.name) {
