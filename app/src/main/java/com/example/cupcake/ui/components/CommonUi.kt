@@ -10,7 +10,7 @@ import com.example.cupcake.R
  * Composable that displays formatted [price] that will be formatted and displayed on screen
  */
 @Composable
-fun FormattedPriceLabel(
+fun FormattedSubPriceLabel(
     subtotal: String,
     modifier: Modifier = Modifier) {
     Text(
@@ -18,3 +18,15 @@ fun FormattedPriceLabel(
         modifier = modifier
     )
 }
+
+@Composable
+fun FormattedPriceLabel(
+    total: String,
+    modifier: Modifier = Modifier) {
+    Text(
+        text = stringResource(R.string.total_price, total),
+        modifier = modifier
+    )
+}
+
+

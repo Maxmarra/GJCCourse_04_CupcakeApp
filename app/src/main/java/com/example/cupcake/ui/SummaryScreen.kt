@@ -16,11 +16,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.cupcake.R
 import com.example.cupcake.data.OrderUiState
 import com.example.cupcake.ui.components.FormattedPriceLabel
+import com.example.cupcake.ui.components.FormattedSubPriceLabel
 
 @Composable
 fun OrderSummaryScreen(
@@ -36,7 +36,8 @@ fun OrderSummaryScreen(
     val numberOfCupcakes = resources.getQuantityString(
         R.plurals.cupcakes,
         orderUiState.quantity,
-        orderUiState.quantity
+        orderUiState.quantity,
+
     )
     //Load and format a string resource with the parameters.
     val orderSummary = stringResource(
@@ -68,7 +69,7 @@ fun OrderSummaryScreen(
         }
         Spacer(modifier = Modifier.height(8.dp))
         FormattedPriceLabel(
-            subtotal = orderUiState.price,
+            total = orderUiState.price,
             modifier = Modifier.align(Alignment.End)
         )
         Button(

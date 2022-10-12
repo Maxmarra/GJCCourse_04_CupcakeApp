@@ -22,7 +22,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.cupcake.R
-import com.example.cupcake.ui.components.FormattedPriceLabel
+import com.example.cupcake.ui.components.FormattedSubPriceLabel
 
 @Composable
 fun SelectOptionScreen(
@@ -63,7 +63,7 @@ fun SelectOptionScreen(
         }
         Divider(thickness = 1.dp, modifier = modifier.padding(bottom = 16.dp))
 
-        FormattedPriceLabel(
+        FormattedSubPriceLabel(
             subtotal = subtotal,
             modifier = Modifier
                 .align(Alignment.End)
