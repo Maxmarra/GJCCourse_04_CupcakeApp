@@ -22,8 +22,12 @@
     <string name="subtotal_price">Подытог %s</string>
     <string name="total_price">Итого %s</string>
     <string name="new_cupcake_order">Новый заказ</string>
-    <string name="order_details">Кол-во: %1$s \n Вкус: %2$s \nДата: %3$s \n
-        Итого: %4$s \n\n Спасибо!</string>
+    <string name="order_details">
+        Кол-во: %1$s \n
+        Вкус: %2$s \n
+        Дата: %3$s \n
+        Итого: %4$s \n\n
+        Спасибо!</string>
     <string name="back_button">Назад</string>
     <plurals name="cupcakes">
         <item quantity="one">%d кекс</item>
